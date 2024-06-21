@@ -33,6 +33,7 @@ section{
   scroll-snap-align: start;
   scroll-margin: var(--nav-height);
   scroll-snap-stop: always;
+  flex-direction: column;
 }
 
 
@@ -44,6 +45,13 @@ h1{
 
 .one{
   background-color: cyan;
+  align-items: center;
+  justify-content: start;
+}
+
+.one h1 {
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .two{
@@ -56,4 +64,39 @@ h1{
 
 .four{
   background-color: rgb(65, 13, 13);
+}
+
+.slider{
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  max-width: 500px;
+  width: 100%;
+  height: 50vh;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: #0071bd #35353586; /* Para navegadores basados en Gecko (Firefox) */
+}
+
+.slider::-webkit-scrollbar{
+  height: 13px;
+}
+.slider::-webkit-scrollbar-track{
+  background: #35353586;
+}
+
+.slider::-webkit-scrollbar-thumb{
+  background: #0071bd;
+}
+
+.slider::-webkit-scrollbar-thumb:active{
+  background: #29a9ff;
+}
+
+.slider img {
+  width: 100%;
+  height: fit-content;
+  min-height: 300px;
+  object-fit: cover;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
